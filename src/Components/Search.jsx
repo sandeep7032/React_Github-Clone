@@ -4,10 +4,14 @@ import getUserData from "./GithubAPI";
 import githubContext from "./Context";
 
 const Search = () => {
-  const [username, setUsername] = useState();
+  const [username, setUsername] = useState("");
   const { addData } = useContext(githubContext);
   const getData = () => {
-    getUserData(username, addData);
+    if (username === "") {
+      alert("Please Enter Username");
+    } else {
+      getUserData(username, addData);
+    }
   };
   return (
     <Box>
@@ -33,3 +37,4 @@ const Search = () => {
 };
 
 export default Search;
+
