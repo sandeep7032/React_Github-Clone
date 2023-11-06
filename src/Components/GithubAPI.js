@@ -7,7 +7,7 @@ const getUserData = (username, addData) => {
             addData(res.data)
         })
         .catch(() => {
-            alert("Failed to Load")
+            alert("Username not Found")
         })
 }
 
